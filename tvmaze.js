@@ -20,7 +20,7 @@
 const altImg = 'https://tinyurl.com/tv-missing';
 
 async function searchShows(query) {
-	let response = await axios.get(`http://api.tvmaze.com/search/shows?q=${query}`);
+	let response = await axios.get(`https://api.tvmaze.com/search/shows?q=${query}`);
 
 	let shows = response.data.map((result) => {
 		let show = result.show;
@@ -85,7 +85,7 @@ $('#search-form').on('submit', async function handleSearch(evt) {
  */
 
 async function getEpisodes(id) {
-	let response = await axios.get(`http://api.tvmaze.com/shows/${id}/episodes`);
+	let response = await axios.get(`https://api.tvmaze.com/shows/${id}/episodes`);
 
 	let episodes = response.data.map((episode) => ({
 		id: episode.id,
